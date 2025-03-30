@@ -1,32 +1,28 @@
 <script setup lang="ts">
-import { Todo } from '../core/domain/entities';
+import type { Todo } from '../core/domain/entities'
 
 interface Props {
-  todo: Todo;
+  todo: Todo
 }
 
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 const emit = defineEmits<{
-  toggle: [id: string];
-  delete: [id: string];
-}>();
+  toggle: [id: string]
+  delete: [id: string]
+}>()
 
 const handleToggle = () => {
-  emit('toggle', props.todo.id);
-};
+  emit('toggle', props.todo.id)
+}
 
 const handleDelete = () => {
-  emit('delete', props.todo.id);
-};
+  emit('delete', props.todo.id)
+}
 </script>
 
 <template>
-  <div class="todo-item" :class="{ 'completed': todo.completed }">
-    <input 
-      type="checkbox" 
-      :checked="todo.completed" 
-      @change="handleToggle"
-    />
+  <div class="todo-item" :class="{ completed: todo.completed }">
+    <input type="checkbox" :checked="todo.completed" @change="handleToggle" />
     <span class="todo-title">{{ todo.title }}</span>
     <button @click="handleDelete" class="delete-btn">Delete</button>
   </div>

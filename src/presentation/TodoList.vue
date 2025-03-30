@@ -25,7 +25,7 @@ const handleAddTodo = () => {
 
 const handleFilterChange = (value: string) => {
   filterOption.value = value;
-  
+
   switch (value) {
     case 'active':
       setFilter({ completed: false });
@@ -43,45 +43,45 @@ const handleFilterChange = (value: string) => {
 <template>
   <div class="todo-container">
     <h1>Todo App with Clean Architecture</h1>
-    
+
     <div v-if="error" class="error-message">
       {{ error }}
     </div>
-    
+
     <div class="add-todo">
-      <input 
-        v-model="newTodoTitle" 
+      <input
+        v-model="newTodoTitle"
         placeholder="Add a new todo..."
         @keyup.enter="handleAddTodo"
       />
       <button @click="handleAddTodo">Add</button>
     </div>
-    
+
     <div class="filter-controls">
-      <button 
-        :class="{ active: filterOption === 'all' }" 
+      <button
+        :class="{ active: filterOption === 'all' }"
         @click="handleFilterChange('all')"
       >All</button>
-      <button 
-        :class="{ active: filterOption === 'active' }" 
+      <button
+        :class="{ active: filterOption === 'active' }"
         @click="handleFilterChange('active')"
       >Active</button>
-      <button 
-        :class="{ active: filterOption === 'completed' }" 
+      <button
+        :class="{ active: filterOption === 'completed' }"
         @click="handleFilterChange('completed')"
       >Completed</button>
     </div>
-    
+
     <div v-if="isLoading" class="loading">Loading...</div>
-    
+
     <div v-else-if="todos.length === 0" class="empty-state">
       No todos found.
     </div>
-    
+
     <div v-else class="todo-list">
-      <TodoItem 
-        v-for="todo in todos" 
-        :key="todo.id" 
+      <TodoItem
+        v-for="todo in todos"
+        :key="todo.id"
         :todo="todo"
         @toggle="toggleTodo"
         @delete="deleteTodo"
