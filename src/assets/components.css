@@ -1,0 +1,35 @@
+/* Component Style Variables */
+
+/* Color Variables 
+   These variables provide a consistent color palette for components
+*/
+
+:root {
+  /* Primary Colors */
+  --color-primary: #1890ff;
+  --color-primary-hover: #40a9ff;
+  
+  /* Error/Danger Colors */
+  --color-error: #ff4d4f;
+  --color-error-hover: #ff7875;
+  --color-error-bg: #fff1f0;
+  --color-error-border: #ffccc7;
+  
+  /* Neutral/Gray Colors */
+  --color-border: #ddd;
+  --color-background-light: #f5f5f5;
+  --color-background-medium: #eee;
+  --color-text-light: #999;
+}
+
+/* Usage Examples:
+   - Buttons: var(--color-primary), var(--color-primary-hover)
+   - Delete actions: var(--color-error), var(--color-error-hover)
+   - Form elements: var(--color-border), var(--color-background-light)
+   - Secondary text: var(--color-text-light)
+   - Error states: var(--color-error-bg), var(--color-error-border)
+*/
+
+/* Import this file in your main.css or directly in components 
+   that need access to these variables */
+
